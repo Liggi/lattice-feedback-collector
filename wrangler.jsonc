@@ -1,0 +1,21 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "lattice-feedback",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-08-20",
+  "workers_dev": true,
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "lattice-feedback",
+      // Production database; forks create their own with `wrangler d1 create lattice-feedback`.
+      "database_id": "f3ca27ff-2538-4404-b18e-a22635336c16",
+      "migrations_dir": "migrations"
+    }
+  ],
+  "ai": { "binding": "AI", "remote": true },
+  "triggers": { "crons": ["*/10 * * * *"] },
+  "observability": { "enabled": true, "head_sampling_rate": 1 }
+  // Secrets (wrangler secret put): TURNSTILE_SITE_KEY, TURNSTILE_SECRET_KEY, HMAC_SECRET,
+  // READ_TOKEN_SHA256, and optionally INTAKE_DISABLED=1.
+}

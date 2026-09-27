@@ -1,0 +1,10 @@
+# Local development only. Copy to .dev.vars (gitignored).
+# Cloudflare's always-pass Turnstile test keys.
+TURNSTILE_SITE_KEY=1x00000000000000000000AA
+TURNSTILE_SECRET_KEY=1x0000000000000000000000000000000AA
+# Test-key siteverify responses report hostname example.com and no action.
+TURNSTILE_HOSTNAME=example.com
+ALLOW_TURNSTILE_TEST_KEYS=1
+HMAC_SECRET=dev-only-hmac-secret-not-for-production
+# sha256("dev-read-token-local")
+READ_TOKEN_SHA256=1900b75089c010d64f2973de6f94b99ff1403bdea120d138138960b2718f536b

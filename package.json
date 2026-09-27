@@ -1,0 +1,22 @@
+{
+  "name": "lattice-feedback-collector",
+  "version": "0.1.0",
+  "description": "Feedback collector for Lattice: Cloudflare Worker, D1, Turnstile, Workers AI",
+  "scripts": {
+    "dev": "wrangler dev --local --port 8791",
+    "db:migrate:local": "wrangler d1 migrations apply lattice-feedback --local",
+    "test": "vitest run",
+    "typecheck": "tsc",
+    "deploy": "wrangler deploy"
+  },
+  "license": "Apache-2.0",
+  "type": "module",
+  "devDependencies": {
+    "@cloudflare/vitest-pool-workers": "^0.22.0",
+    "@cloudflare/workers-types": "^5.20260927.1",
+    "typescript": "^7.0.2",
+    "vitest": "^4.1.11",
+    "wrangler": "^4.141.0"
+  },
+  "private": true
+}
